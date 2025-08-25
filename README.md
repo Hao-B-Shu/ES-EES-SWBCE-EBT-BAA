@@ -22,7 +22,7 @@ Integrated codes for ES-EES architectures, SWBCE loss, EBT loss, and BAA. They a
       'Matlab' includes the evaluation codes from Matlab.
 
 (c) Checkpoints of each paper can be provided upon request. They are too large to share here (More than 80 GB for the four papers).  
-    Datasets and partitions are in the Tag.
+    Datasets and partitions are in the Tag.  
     Please email us if needed.
 
 (d) Related Papers:
