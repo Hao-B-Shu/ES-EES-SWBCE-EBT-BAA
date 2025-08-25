@@ -18,7 +18,8 @@ Integrated codes for ES-EES architectures, SWBCE loss, EBT loss, and BAA. They a
       Use   'Predict_Final.py'  to generate and save predictions after obtaining checkpoints.  
       'ES_EES_SWBCE_EBT_BAA.py'      includes ES/EES models, SWBCE/EBT/BAA losses.   
           'Preprocessing_final.py'           is for data preprocessing, such as data augmentation.  
-      'HED_Edge_Select.py'/'RCF_Edge_Select.py'/'BDCN_Edge_Select.py'/'Dexi_Edge_Select.py' include previous models and their modifications as extractors for ES-EES.
+      'HED_Edge_Select.py'/'RCF_Edge_Select.py'/'BDCN_Edge_Select.py'/'Dexi_Edge_Select.py' include previous models and their modifications as extractors for ES-EES.  
+      'Matlab' includes the evaluation codes from Matlab.
 
 (c) Related Papers:
 
