@@ -21,7 +21,12 @@ Integrated codes for ES-EES architectures, SWBCE loss, EBT loss, and BAA. They a
       'HED_Edge_Select.py'/'RCF_Edge_Select.py'/'BDCN_Edge_Select.py'/'Dexi_Edge_Select.py' include previous models and their modifications as extractors for ES-EES.  
       'Matlab' includes the evaluation codes from Matlab.
 
-(c) Related Papers:
+(c) Checkpoints of each paper:  
+ES/EES: https://www.alipan.com/s/tuKMaRwKUpZ  
+SWBCE: https://www.alipan.com/s/zqAMQbo49ZG  
+EBT: https://www.alipan.com/s/EchYdKeNzwN  
+
+(d) Related Papers:
 
 ES-EES Architecture:  
 @Article{S2025ES,  
