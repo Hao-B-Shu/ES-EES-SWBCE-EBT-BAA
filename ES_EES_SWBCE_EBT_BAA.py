@@ -7,7 +7,6 @@ import math
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
-from pytorch_wavelets import DWTInverse, DWTForward
 from torchvision import transforms as T
 normalize=T.Normalize(mean = [0.485, 0.456, 0.406],std = [0.229, 0.224, 0.225])
 
@@ -126,7 +125,7 @@ class SWBCE(nn.Module):
 class BAA_Loss(nn.Module):#Pred can be either an image or a list
     def __init__(self, thr=0.7,thr_dev=0.2,res=1,bend=16,base_loss='WBCE',Disable_multi_layer=True,Only_Last_Thr=True,balance=1.1,l_weight=[1.1],device='cpu',edge_r=7,EBT_balance=[1,0.8,0.5]):
                                                                           #Only use last layer     #When use multi-layer, only last Thr
-        super(Thr_Loss, self).__init__()
+        super(BAA_Loss, self).__init__()
         self.thr_dev = thr_dev
         self.bend = bend
         self.thr = thr
@@ -1854,3 +1853,4 @@ if __name__ == '__main__':
     x=torch.rand(4,3,32,32)
     y=Test(x)
     print(y.shape)
+
