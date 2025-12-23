@@ -416,9 +416,10 @@ Train(
     train_shuffle= True,
     num_work= 8,
     pred_require= 16, # Ignore it, only valid in test but test is not used this code
-    Union=None # Union optimizing epoch, set to a int (the epochs) for joint optimization or set to None otherwise
+    Union=None # Additional union optimizing epoch, set an int (the epochs) for joint optimization or set to None otherwise
 )
 
 torch.cuda.empty_cache()
 ###########################################
+
 
