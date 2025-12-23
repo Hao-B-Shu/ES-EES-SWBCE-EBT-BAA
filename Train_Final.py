@@ -392,7 +392,7 @@ Selector_list=[Selector_1] # [Selector_1,Selector_2]
 Selector_Name=['Selector1'] # ['Selector1','Selector2']
 Loss_Selector_list=[SWBCE(Label_Pred_balance=0)] # [SWBCE(),SWBCE()], Label_Pred_balance=0 represents the WBCE loss
 Optimizer_Selector_list=[Selector_1_Optimizer] #[Selector_1_Optimizer,Selector_2_Optimizer]
-epoch_Selector_list=[1], # [1,1], Selector optimized epochs
+epoch_Selector_list=[1] # [1,1], Selector optimized epochs
 ##################################################################
 
 
@@ -421,3 +421,4 @@ Train(
 
 torch.cuda.empty_cache()
 ###########################################
+
