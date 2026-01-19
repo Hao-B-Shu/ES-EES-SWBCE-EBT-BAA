@@ -4,6 +4,7 @@ import numpy as np
 import torch.optim as optim
 from datetime import datetime
 import os
+from torch.utils.tensorboard import SummaryWriter
 
 def Torch_Normalizion(input):
     return input/input.max()
@@ -179,6 +180,8 @@ def Train(
             print('Train Extractor ' + str(i+1))
             get_parameter_number(Extractor_list[i])
 
+        writer = SummaryWriter(Pretrain_dir+'/runs/'+Extractor_Name[i])
+
         for Epoch in range (0,epoch_Extractor_list[i]):
 
             loss_list = []
@@ -210,6 +213,9 @@ def Train(
                 print('epoch: ' + str(Epoch + 1))
                 print('loss=' + str(loss_list[-1]))
                 print(datetime.now())
+            writer.add_scalar('Loss/train', loss_avg, Epoch)
+
+        writer.close()
 
         epoch=epoch+epoch_Extractor_list[i]
         Extractor_list[i].eval()
@@ -223,6 +229,8 @@ def Train(
         if epoch_Selector_list[i]>0:
             print('Train Selector ' + str(i+1))
             get_parameter_number(Selector_list[i])
+
+        writer = SummaryWriter(Pretrain_dir+'/runs/'+ Selector_Name[i])
 
         for Epoch in range (0,epoch_Selector_list[i]):
 
@@ -260,7 +268,9 @@ def Train(
                 print('epoch: ' + str(Epoch + 1))
                 print('loss=' + str(loss_list[-1]))
                 print(datetime.now())
+            writer.add_scalar('Loss/train', loss_avg, Epoch)
 
+        writer.close()
         epoch = epoch + epoch_Selector_list[i]
         Selector_list[i].eval()
 
@@ -280,6 +290,7 @@ def Train(
 
         print('Union optimizing with '+str(Max_Extractor_index)+' extractors and '+str(Select_level)+' selectors')
 
+        writer = SummaryWriter(Pretrain_dir+'/runs/Union')
         for Epoch in range(0, Union):
 
             loss_list = []
@@ -326,6 +337,9 @@ def Train(
                 print('epoch: ' + str(Epoch + 1))
                 print('loss=' + str(loss_list[-1]))
                 print(datetime.now())
+            writer.add_scalar('Loss/train', loss_avg, Epoch)
+
+        writer.close()
 
         for i in range(Max_Extractor_index):
             Extractor_list[i].eval()
@@ -421,5 +435,6 @@ Train(
 
 torch.cuda.empty_cache()
 ###########################################
+
 
 
